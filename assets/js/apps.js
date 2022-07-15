@@ -1,7 +1,5 @@
-function pintar(element) {
-    console.log("Elemento" + element);
-
-    element.style.setProperty("background", "red");
+function pintar() {    
+    ele.style.backgroundColor = 'yellow'
 }
 ele = document.getElementById("ele1")
-ele.addEventListener("click", pintar, ele);
+ele.addEventListener("click", pintar);
