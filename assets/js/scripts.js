@@ -1,6 +1,10 @@
-function pintar() {    
-    ele.style.backgroundColor = 'yellow'
+function pintar(element, color ="purple") {    
+    // Guía console.log("Element: ", element)
+    element.style.backgroundColor = color
 }
-ele = document.getElementById("ele1")
-ele.style.backgroundColor='green'
-ele.addEventListener("click", pintar);
+
+let color = "red"
+let ele = document.getElementById("ele1")
+ele.addEventListener("click", ()=>{
+pintar(ele,color)
+});
