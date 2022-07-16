@@ -1,26 +1,36 @@
+let globalColor = "";
+let box1 = document.querySelector("#div1")
+let box2 = document.querySelector("#div2")
+let box3 = document.querySelector("#div3")
+let box4 = document.querySelector("#div4")
+
 document.addEventListener('keydown', (event) => {
     if (event.key === 'a') {
         /* Color a change */
-        ele = document.querySelector("#div1")
-        ele.style.backgroundColor = 'purple'
-        return;
+        globalColor = "purple"
     } else if (event.key === 's') {
         //Color s change
-        ele = document.querySelector("#div2")
-        ele.style.backgroundColor = 'orange'
-        return;
+        globalColor = 'orange'
     } else if (event.key === 'd') {
         //Color d change
-        ele = document.querySelector("#div3")
-        ele.style.backgroundColor = 'skyblue'
-        return;
-    } else if(event.key === 'f'){
+        globalColor = 'skyblue'
+    } else if (event.key === 'f') {
         //color f change
-        ele = document.querySelector("#div4")
-        ele.style.backgroundColor = 'magenta'
-        return;
-    } else{
+        globalColor = 'magenta'
+    } else {
         //Reset HTML, any other key
         location.reload()
     }
+
+    changeColor(box1, globalColor);
+    changeColor(box2, globalColor);
+    changeColor(box3, globalColor);
+    changeColor(box4, globalColor);
 })
+
+let changeColor = (element, color) => {
+    element.addEventListener("click", () =>
+        element.style.backgroundColor = color
+    )
+}
+
